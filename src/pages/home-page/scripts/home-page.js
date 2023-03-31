@@ -37,25 +37,25 @@ for (const color of colors) {
 
 function changeBigImage() {
   if (firstColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Desktop, tablet 1.png";
+    img.src = "/images/Desktop, tablet 1.png";
   } else if (secondColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Desktop, tablet 2.png";
+    img.src = "/images/Desktop, tablet 2.png";
   } else if (thirdColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Desktop, tablet 3.png";
+    img.src = "/images/Desktop, tablet 3.png";
   } else if (fourthColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Desktop, tablet 4.png";
+    img.src = "/images/Desktop, tablet 4.png";
   }
 }
 
 function changeSmallImage() {
   if (firstColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Mobile 1.png";
+    img.src = "/images/Mobile 1.png";
   } else if (secondColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Mobile 2.png";
+    img.src = "/images/Mobile 2.png";
   } else if (thirdColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Mobile 3.png";
+    img.src = "/images/Mobile 3.png";
   } else if (fourthColor.getAttribute("data-border") === "true") {
-    img.src = "/public/images/Mobile 4.png";
+    img.src = "/images/Mobile 4.png";
   }
 }
 
