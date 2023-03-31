@@ -13,12 +13,13 @@ const secondColor = document.querySelector(".second");
 const thirdColor = document.querySelector(".third");
 const fourthColor = document.querySelector(".fourth");
 const colors = document.querySelectorAll(".product-container-component__color");
-const colorName = document.getElementById("color-name");
+let colorName = document.getElementById("color-name");
+const addToCart = document.getElementById("addToCart");
 
 function handleColorClick(event) {
   const clickedElement = event.target;
   for (const color of colors) {
-    color.setAttribute("data-border", color === clickedElement);
+    color.setAttribute("data-select", color === clickedElement);
   }
 
   //window.addEventListener("resize", function () {
@@ -36,38 +37,51 @@ for (const color of colors) {
 }
 
 function changeBigImage() {
-  if (firstColor.getAttribute("data-border") === "true") {
+  if (firstColor.getAttribute("data-select") === "true") {
     img.src = "/images/Desktop, tablet 1.png";
-  } else if (secondColor.getAttribute("data-border") === "true") {
+  } else if (secondColor.getAttribute("data-select") === "true") {
     img.src = "/images/Desktop, tablet 2.png";
-  } else if (thirdColor.getAttribute("data-border") === "true") {
+  } else if (thirdColor.getAttribute("data-select") === "true") {
     img.src = "/images/Desktop, tablet 3.png";
-  } else if (fourthColor.getAttribute("data-border") === "true") {
+  } else if (fourthColor.getAttribute("data-select") === "true") {
     img.src = "/images/Desktop, tablet 4.png";
   }
 }
 
 function changeSmallImage() {
-  if (firstColor.getAttribute("data-border") === "true") {
+  if (firstColor.getAttribute("data-select") === "true") {
     img.src = "/images/Mobile 1.png";
-  } else if (secondColor.getAttribute("data-border") === "true") {
+  } else if (secondColor.getAttribute("data-select") === "true") {
     img.src = "/images/Mobile 2.png";
-  } else if (thirdColor.getAttribute("data-border") === "true") {
+  } else if (thirdColor.getAttribute("data-select") === "true") {
     img.src = "/images/Mobile 3.png";
-  } else if (fourthColor.getAttribute("data-border") === "true") {
+  } else if (fourthColor.getAttribute("data-select") === "true") {
     img.src = "/images/Mobile 4.png";
   }
 }
 
 function changeColorName () {
-  if (firstColor.getAttribute("data-border") === "true") {
+  if (firstColor.getAttribute("data-select") === "true") {
     colorName.innerHTML = "Łososiowy";
-  } else if (secondColor.getAttribute("data-border") === "true") {
+  } else if (secondColor.getAttribute("data-select") === "true") {
     colorName.innerHTML = "Rózowy";
-  } else if (thirdColor.getAttribute("data-border") === "true") {
+  } else if (thirdColor.getAttribute("data-select") === "true") {
     colorName.innerHTML = "Biszkoptowy";
-  } else if (fourthColor.getAttribute("data-border") === "true") {
+  } else if (fourthColor.getAttribute("data-select") === "true") {
     colorName.innerHTML = "Szary";
   }
 }
 
+function alert() {
+  const alert = document.createElement("div");
+  alert.classList.add("product-container-component__alert")
+  const container = document.querySelector(".product-container-component");
+  let color = colorName.innerHTML.toLowerCase();
+  
+  alert.textContent = `Portfel w kolorze ${color}m został dodany do koszyka`;
+  container.appendChild(alert);
+
+  setTimeout(() => container.removeChild(alert), 2500);
+}
+
+addToCart.addEventListener("click", alert);

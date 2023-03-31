@@ -11,6 +11,17 @@ body {
   align-items: center;
   font-family: "Noto Serif";
   margin: 5em 2em;
+  
+  & &__alert {
+    position: absolute;
+    top: 140px;
+    background-color: var(--color-white);
+    color: #3baa3b;
+    box-shadow: -1px 1px 1px 1px var(--color-pink-basic);
+    padding: 24px;
+    border-radius: 24px;
+    margin: 2em;
+  }
 
   & &__product-card {
     display: flex;
@@ -79,11 +90,11 @@ body {
       height: 24px;
       border-radius: 12px;
 
-      &[data-border="true"] {
-        border: 1px solid black;
+      &[data-select="true"] {
+        border: 1px solid var(--color-black);
       }
 
-      &[data-border="false"] {
+      &[data-select="false"] {
         border: none;
       }
     }
@@ -160,6 +171,7 @@ body {
   & &__button:active {
     background-color: var(--color-pink-active);
   }
+
 
   @media (max-width: 578px) {
     margin: 2em 1em;
