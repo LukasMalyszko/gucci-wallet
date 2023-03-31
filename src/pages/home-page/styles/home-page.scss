@@ -1,0 +1,184 @@
+/// Homepage Styles File
+/// Here we import all the Styles files we need for our Homepage.
+
+body {
+  background-color: var(--color-pink-second);
+}
+
+.product-container-component {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Serif";
+  margin: 5em 2em;
+
+  & &__product-card {
+    display: flex;
+    background-color: var(--color-white);
+    max-width: 677px;
+    border-radius: 16px;
+  }
+
+  & &__product-img {
+    img {
+      max-width: 280px;
+      height: 100%;
+      border-radius: 16px 0 0 16px;
+      //object-fit: cover;
+    }
+  }
+
+  & &__product-description {
+    padding: 40px 32px;
+  }
+
+  & &__category-title {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    color: var(--color-pink-basic);
+  }
+
+  & &__product-name {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 35px;
+    letter-spacing: -0.02em;
+    padding: 8px 0 12px;
+    max-width: 205px;
+  }
+
+  & &__product-specification {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    color: var(--color-gray);
+    padding-bottom: 16px;
+  }
+
+  & &__color-word {
+    font-family: Montserrat;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 17px;
+    letter-spacing: -0.01em;
+    padding-bottom: 8px;
+  }
+
+  & &__color-choose {
+    display: flex;
+    gap: 16px;
+  }
+    
+    & &__color {
+      width: 24px;
+      height: 24px;
+      border-radius: 12px;
+
+      &[data-border="true"] {
+        border: 1px solid black;
+      }
+
+      &[data-border="false"] {
+        border: none;
+      }
+    }
+  
+  
+  .first {
+    background-color: var(--product-color);
+  }
+
+  .second {
+    background-color: var(--product-color);
+  }
+
+  .third {
+    background-color: var(--product-color);
+  }
+
+  .fourth {
+    background-color: var(--product-color);
+  }
+
+  & &__price {
+    display: flex;
+    gap: 16px;
+    padding: 24px 0 10px;
+  }
+
+  & &__new-price {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 26px;
+    letter-spacing: -0.02em;
+  }
+
+  & &__old-price {
+    margin-top: 1px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 33px;
+    letter-spacing: -0.02em;
+    text-decoration: line-through;
+    color: var(--color-gray);
+  }
+
+  & &__currency-new {
+    font-size: 14px;
+    line-height: 15px;
+  }
+
+  & &__currency-old {
+    font-size: 10px;
+    line-height: 11px;
+  }
+
+  & &__button {
+    font-family: Montserrat;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: -0.01em;
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 24px;
+    color: var(--color-white);
+    background-color: var(--color-pink-basic);
+  }
+
+  & &__button:hover {
+    cursor: pointer;
+    background-color: var(--color-pink-hover);
+  }
+
+  & &__button:active {
+    background-color: var(--color-pink-active);
+  }
+
+  @media (max-width: 578px) {
+    margin: 2em 1em;
+
+    & &__product-card {
+      flex-direction: column;
+    }
+
+    & &__product-img {
+      width: 100%;
+      img {
+        max-width: none;
+        width: 100%;
+        border-radius: 16px 16px 0 0px;
+      }
+    }
+
+    & &__product-description {
+      padding: 24px 16px;
+    }
+  }
+}
