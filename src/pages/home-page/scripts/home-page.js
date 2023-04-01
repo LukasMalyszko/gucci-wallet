@@ -58,7 +58,7 @@ function changeImgS() {
   }
 }
 
-function alert(color) {
+function alert() {
   const alert = document.createElement("div");
   alert.classList.add("product-container-component__alert");
   const productContainer = document.querySelector(
