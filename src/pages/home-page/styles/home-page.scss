@@ -93,13 +93,13 @@ body {
     display: flex;
     gap: 16px;
   }
-    
-    & &__color {
-      width: 24px;
-      height: 24px;
-      border-radius: 12px;
-      background-color: var(--product-color);
-
+  
+  & &__color {
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: var(--product-color);
+    transition: 1s;
       
       &[data-select="true"] {
         box-shadow: inset 0px 0px 0px 1px var(--color-black);
@@ -115,12 +115,10 @@ body {
       box-shadow: inset 0px 0px 0px 1px var(--color-black);
       opacity: .8;
       cursor: pointer;
-      transition: 1s;
     }
 
     & &__color:active {
       filter: saturate(500%);
-      transition: 1s;
     }
   
   & &__price {
@@ -142,7 +140,6 @@ body {
     font-weight: 500;
     line-height: 33px;
     letter-spacing: -0.02em;
-    //text-decoration: line-through;
     color: var(--color-gray);
     position: relative;
     
@@ -179,17 +176,16 @@ body {
     padding: 14px 24px;
     color: var(--color-white);
     background-color: var(--color-pink-basic);
+    transition: 1s;
   }
 
   & &__button:hover {
     cursor: pointer;
     background-color: var(--color-pink-hover);
-    transition: 1s;
   }
   
   & &__button:active {
     background-color: var(--color-pink-active);
-    transition: 1s;
   }
 
 
