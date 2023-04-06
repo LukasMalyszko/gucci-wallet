@@ -99,11 +99,11 @@ body {
     height: 24px;
     border-radius: 12px;
     background-color: var(--product-color);
-    transition: 1s;
+    transition: .2s;
       
       &[data-select="true"] {
         box-shadow: inset 0px 0px 0px 1px var(--color-black);
-        transition: 1s;
+        transition: .2s;
       }
       
       &[data-select="false"] {
@@ -176,7 +176,7 @@ body {
     padding: 14px 24px;
     color: var(--color-white);
     background-color: var(--color-pink-basic);
-    transition: 1s;
+    transition: .2s;
   }
 
   & &__button:hover {
