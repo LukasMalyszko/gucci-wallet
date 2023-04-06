@@ -9,10 +9,6 @@ import "../styles/home-page.scss";
 
 const imgDesktop = document.querySelector(".product-img-desktop");
 const imgMobile = document.querySelector(".product-img-mobile");
-const firstColor = document.querySelector(".first");
-const secondColor = document.querySelector(".second");
-const thirdColor = document.querySelector(".third");
-const fourthColor = document.querySelector(".fourth");
 const colors = document.querySelectorAll(".product-container-component__color");
 const addToCart = document.getElementById("addToCart");
 
@@ -20,13 +16,14 @@ let selectedColor = "łososiowy";
 
 function handleColorClick(event) {
   const clickedElement = event.target;
+  let imgId = clickedElement.getAttribute("data-id");
   for (const color of colors) {
     color.setAttribute("data-select", color === clickedElement);
     if (color === clickedElement) {
       selectedColor = color.getAttribute("data-name");
     }
-    changeImgL();
-    changeImgS();
+    changeImgL(imgId);
+    changeImgS(imgId);
   }
 }
 
@@ -34,28 +31,14 @@ for (const color of colors) {
   color.addEventListener("click", handleColorClick);
 }
 
-function changeImgL() {
-  if (firstColor.getAttribute("data-select") === "true") {
-    imgDesktop.src = "/images/Desktop, tablet 1.png";
-  } else if (secondColor.getAttribute("data-select") === "true") {
-    imgDesktop.src = "/images/Desktop, tablet 2.png";
-  } else if (thirdColor.getAttribute("data-select") === "true") {
-    imgDesktop.src = "/images/Desktop, tablet 3.png";
-  } else if (fourthColor.getAttribute("data-select") === "true") {
-    imgDesktop.src = "/images/Desktop, tablet 4.png";
-  }
+function changeImgL(imgId) {
+  imgDesktop.src = `/images/Desktop, tablet ${imgId}.png`;
+  
 }
 
-function changeImgS() {
-  if (firstColor.getAttribute("data-select") === "true") {
-    imgMobile.src = "/images/Mobile 1.png";
-  } else if (secondColor.getAttribute("data-select") === "true") {
-    imgMobile.src = "/images/Mobile 2.png";
-  } else if (thirdColor.getAttribute("data-select") === "true") {
-    imgMobile.src = "/images/Mobile 3.png";
-  } else if (fourthColor.getAttribute("data-select") === "true") {
-    imgMobile.src = "/images/Mobile 4.png";
-  }
+function changeImgS(imgId) {
+  imgMobile.src = `/images/Mobile ${imgId}.png`;
+  
 }
 
 function alert() {
